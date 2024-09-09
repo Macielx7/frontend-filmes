@@ -20,22 +20,21 @@ export default function Page(){
         <Pagina titulo="Filmes em Cartaz">
             <Row md={4}>
             {filmes.map(item => (
-                <Col className="mb-3">
-                <Card style={{ height: '100%' }}>
-                <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.backdrop_path}  />
-                <Card.Body>
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>{item.original_title}</Card.Text>
-                  <Card.Text>Popularidade: {item.popularity}</Card.Text>
-
-                  <Button variant="danger">Ver Detalhes</Button>
-                </Card.Body>
-              </Card>
-              </Col>
+                <Col className="mb-3" key={item.id}>
+                    <Card style={{ height: '100%' }} className="h-100 d-flex flex-column">
+                        <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.backdrop_path} />
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>{item.original_title}</Card.Text>
+                            <Card.Text><b>Popularidade:</b> {item.popularity}</Card.Text>
+                            <div className="mt-auto">
+                                <Button href= {`filmes/${item.id}`} variant="danger">Ver Detalhes</Button>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </Col>
             ))}
             </Row>
-            
         </Pagina>
-        
     )
 }

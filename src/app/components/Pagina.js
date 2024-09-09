@@ -7,14 +7,14 @@ export default function Pagina(props){
                 <Container>
                     <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/filmes">Filmes</Nav.Link>
-                        <Nav.Link href="/series">Series</Nav.Link>
-                        <Nav.Link href="/atores">Atores</Nav.Link>
-                        
-                         
                          <NavDropdown title="Filmes" id="disney-dropdown">
-                            <NavDropdown.Item href="#">Populares</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Populares</NavDropdown.Item>
+                            <NavDropdown.Item href="/filmes">Filmes Populares</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Séries/Tv" id="disney-dropdown">
+                            <NavDropdown.Item href="/series">Séries Populares</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Atores/Atrizes" id="disney-dropdown">
+                            <NavDropdown.Item href="/atores">Atores Populares</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>  
                 </Container>
